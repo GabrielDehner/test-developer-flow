@@ -27,7 +27,7 @@ _Dentro del directorio Backend utilizar los siguientes comandos de ejecución._
 
 
 # Frontend
-_App que permite visualizar el pronóstico climático actual y de los próximos 5 días en la ubicación actual y en otras 5 ciudades seleccionables._
+_App en Angular que permite visualizar el pronóstico climático actual y de los próximos 5 días en la ubicación actual y en otras 5 ciudades seleccionables._
 
 ### Pre-requisitos 📋
 _Poseer un entorno de node y el cli de angular para ejecutar el proyecto_
