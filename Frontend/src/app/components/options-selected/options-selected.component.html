@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="card-header">
+        Seleccione las opciones
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <select name="" id="" #city class="form-control">
+                        <option *ngFor="let item of arrayCities" value="{{item.value}}">{{item.description}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <button class="btn btn-secondary vertical-center rounded-pill" (click)="getWeather(city.value)">Obtener Pron&oacute;stico</button>
+            </div>
+        </div>
+
+    </div>
+</div>

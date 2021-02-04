@@ -1,0 +1,41 @@
+<div class="">
+    <div class="card" *ngIf="this.datosCiudad!=null">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-auto">
+                    <img class="border rounded img-clima" src="{{this.urlWeatherIcon + this.datosCiudad.weather[0].icon + '@2x.png'}}" alt="">
+                </div>
+                <div class="col-auto">
+                    <h2>Hoy en {{this.datosCiudad.name}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <p> Descripci&oacute;n: <strong>{{this.datosCiudad.weather[0].description}}</strong></p>
+            <p>Humedad: <strong>{{this.datosCiudad.main.humidity}} %</strong></p>
+            <p>Sensaci&oacute;n T&eacute;rmica: <strong>{{this.datosCiudad.main.feels_like}} °C</strong></p>
+            <p>Temperatura: <strong>{{this.datosCiudad.main.temp}} °C</strong></p>
+            <p>M&iacute;nima: <strong>{{this.datosCiudad.main.temp_min}} °C</strong></p>
+            <p>M&aacute;xima: <strong>{{this.datosCiudad.main.temp_max}} °C</strong></p>
+            <p>Nubosidad: <strong>{{this.datosCiudad.clouds.all}} %</strong></p>
+            <p>Presi&oacute;n: <strong>{{this.datosCiudad.main.pressure}} Pa</strong></p>
+            <p>Viento: <strong>{{this.datosCiudad.wind.speed}} Km/h</strong></p>
+            <div class="chip btn btn-light" (click)=forecast(this.datosCiudad.name)>Ver Pron&oacute;stico de 5 d&iacute;as
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="card" *ngIf="this.datosCiudad!=null && this.cincoDias!=null">
+        <div class="card-header">
+            Pr&oacute;ximos 5 D&iacute;as
+        </div>
+        <div class="card-body" *ngIf="this.cincoDias!=null">
+            <app-day [listaClima]="this.cincoDias.slice(0,8)" [indice]="0"></app-day>
+            <app-day [listaClima]="this.cincoDias.slice(8,16)" [indice]="1"></app-day>
+            <app-day [listaClima]="this.cincoDias.slice(16,24)" [indice]="2"></app-day>
+            <app-day [listaClima]="this.cincoDias.slice(24,32)" [indice]="3"></app-day>
+            <app-day [listaClima]="this.cincoDias.slice(32,(this.cincoDias.length-1))" [indice]="4"></app-day>
+        </div>
+    </div>
+
+</div>
